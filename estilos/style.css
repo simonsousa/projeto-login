@@ -5,3 +5,59 @@
        Verde: #49a09d
        Lilás: #5f2c82
 */
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* A borda faz parte da conta de largura */
+}
+
+body, html {
+    background-color: #5f2c82;
+    height: 100vh;
+    width: 100vw;
+}
+
+/*
+    positon: relative -> Permite que os elementos filhos sejam posicionados em relação a este elemento.
+    position: absolute -> Permite que o elemento seja posicionado em relação ao seu primeiro ancestral posicionado (que pode ser o body ou outro elemento com position: relative).
+*/
+
+main {
+    position: relative; /* Para posicionar o conteúdo centralizado */
+    height: 100vh;
+    width: 100vw;
+}
+
+section#login {
+    position: absolute; /* Para posicionar o formulário de login em relação ao main */
+    top: 50%; /* Para centralizar verticalmente */
+    left: 50%; /* Para centralizar horizontalmente */
+    transform: translate(-50%, -50%); /* O translate neste caso está sendo usado para ajustar a posição do elemento, 
+    movendo-o para cima e para a esquerda em 50% de sua própria largura e altura, respectivamente. 
+    Isso é necessário porque o posicionamento absoluto coloca o elemento com base no canto superior esquerdo,
+    então sem o translate, o canto superior esquerdo do formulário estaria exatamente no centro da tela, 
+    em vez de estar centralizado em relação ao seu próprio centro. */
+    
+    overflow: hidden; /* tudo o que tiver fora da borda, vai ficar escondido */
+    background-color: white;
+    width: 250px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
+}
+
+section#login > div#imagem {
+    display: block;
+    background: #5f2c82 url(../imagens/img-login.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 200px;
+}
+
+section#login > div#formulario {
+    display: block;
+    padding: 10px;
+}
