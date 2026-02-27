@@ -42,11 +42,6 @@ section#login {
     position: absolute; /* Para posicionar o formulário de login em relação ao main */
     top: 50%; /* Para centralizar verticalmente */
     left: 50%; /* Para centralizar horizontalmente */
-    transform: translate(-50%, -50%); /* O translate neste caso está sendo usado para ajustar a posição do elemento, 
-    movendo-o para cima e para a esquerda em 50% de sua própria largura e altura, respectivamente. 
-    Isso é necessário porque o posicionamento absoluto coloca o elemento com base no canto superior esquerdo,
-    então sem o translate, o canto superior esquerdo do formulário estaria exatamente no centro da tela, 
-    em vez de estar centralizado em relação ao seu próprio centro. */
     
     overflow: hidden; /* tudo o que tiver fora da borda, vai ficar escondido */
     background-color: white;
@@ -55,6 +50,7 @@ section#login {
     border-radius: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.450);
 
+    transform: translate(-50%, -50%);
     transition: width .3s, height .3s;
     transition-timing-function: ease;
 }
@@ -83,15 +79,39 @@ div#formulario > p {
 
 form > div.campo {
     background-color: #5f2c82;
+    border: 2px solid #5f2c82;
     display: block;
     width: 100%;
-    height: 40px;
-    border-radius: 5px;
+    height: 41px;
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
 div.campo > label {
     display: none;
+}
+
+div.campo > span {
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: #94cfcd;
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-12px); /*sempre que vc tiver uma transformação, transição ou 
+    uma animação, coloque na posição final do seu seletor*/
+}
+
+div.campo > input:focus-within {
+    background-color: white;
 }
 
 form > input[type=submit] {
